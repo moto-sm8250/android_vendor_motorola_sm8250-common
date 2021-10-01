@@ -4,6 +4,7 @@ on property:init.svc.vendor.mmi-usb-sh=stopped && property:ro.boot.mode=charger
     setprop sys.usb.config charging
 
 on moto-charger
+    stop vendor.sensors
     chown radio wakelock /sys/power/wake_lock
     chmod 0660 /sys/power/wake_lock
     chown radio wakelock /sys/power/wake_unlock
